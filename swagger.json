@@ -1,0 +1,105 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "BPG-API",
+    "description": "Документация API для генератора бизнес-процессов.",
+    "version": "0.0.1"
+  },
+  "paths": {
+    "/user_registration": {
+      "post": {
+        "tags": [
+          "Регистрация и авторизация"
+        ],
+        "summary": "Регистрация пользователя",
+        "operationId": "UserRegistration",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Логин пользователя, для которого нужно получить подписки.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/RegistrationBody"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Успешная регистрация"
+          }
+        }
+      }
+    },
+    "/user_subscriptions": {
+      "post": {
+        "tags": [
+          "Информация о пользователе"
+        ],
+        "summary": "Возвращает список подписок пользователя",
+        "description": "Возвращает список подписок на бизнес-процессы  определенного пользователя",
+        "operationId": "ReturnSubscriptions",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Логин пользователя, для которого нужно получить подписки.",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SubscriptionsBody"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "JSON список пользователей",
+            "schema": {
+              "$ref": "#/definitions/SubscriptionsResponse"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "SubscriptionsBody": {
+      "type": "object",
+      "properties": {
+        "login": {
+          "type": "string"
+        }
+      },
+      "xml": {
+        "name": "Category"
+      }
+    },
+    "SubscriptionsResponse": {
+      "type": "object",
+      "properties": {
+        "subscriptions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "RegistrationBody": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "login": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      },
+      "xml": {
+        "name": "Category"
+      }
+    }
+  }
+}
