@@ -1,8 +1,8 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "BPG-API",
-    "description": "Документация API для генератора бизнес-процессов.",
+    "title": "Business-Process-Machine API",
+    "description": "Документация API для машины состояний бизнес-процессов.",
     "version": "0.0.1"
   },
   "paths": {
