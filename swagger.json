@@ -316,7 +316,7 @@
         }
       }
     },
-    "/VoucherStates": {
+    "/voucher_states": {
       "post": {
         "tags": [
           "Работа с состояниями"
