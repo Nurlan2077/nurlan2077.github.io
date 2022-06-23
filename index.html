@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+        <title>Graphic Editor</title>
+    </head>
+    <body>
+        <h1>Graphic Editor by Nurlan</h1>
+        <input id = "colorPicker" value="#000000" data-jscolor="">
+        <button onclick="activateDrawingLine()">Нарисовать линию</button>
+        <button onclick="addCircle()">Нарисовать круг</button>
+
+        <button onclick="deleteObjects()">Удалить объекты</button>
+
+
+
+
+        <canvas id="canvas"></canvas>
+
+        <a id="line_equation"></a>
+
+
+
+    </body>
+    <script src="./lib/jscolor.min.js"></script>
+    <script src="./lib/fabric.min.js"></script>
+
+    <script src="main.js"></script>
+</html>
